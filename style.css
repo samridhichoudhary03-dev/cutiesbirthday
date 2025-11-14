@@ -1,0 +1,136 @@
+/* =============================== */
+/*      GLOBAL THEME SETTINGS      */
+/* =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --bg1: #fff5fb;
+  --bg2: #ffeef8;
+  --accent1: #ff9db5;
+  --accent2: #ff6fb3;
+  --gold: rgba(255,210,120,0.95);
+  --white-trans: rgba(255,255,255,0.18);
+  --card-border: rgba(255,140,255,0.4);
+  --text-dark: #2b1b2b;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background: linear-gradient(135deg,#ffe6ff 0%, #fff7e6 30%, #eef7ff 60%, #fff0f8 100%);
+  color:var(--text-dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+/* page fade for transitions */
+.page-fade { opacity: 1; transition: opacity .45s ease; }
+.page-fade.fade-out { opacity: 0; }
+
+/* ================= */
+/* HERO / INDEX CARD  */
+/* ================= */
+.hero{display:flex;min-height:100vh;align-items:center;justify-content:center;padding:40px}
+.hero-card{max-width:980px;width:100%}
+.main-title{
+  font-size:2.4rem;
+  margin:8px 0;
+  color:var(--accent2);
+  text-align:center;
+  letter-spacing:0.6px;
+}
+.name{font-weight:700}
+.subtitle{text-align:center;color:#5a3a4d;margin-bottom:18px}
+
+/* call to action row */
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
+.btn{
+  display:inline-block;padding:12px 22px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border:1px solid var(--card-border);color:#fff;text-decoration:none;font-weight:600;backdrop-filter: blur(6px);
+}
+.btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));border-color:rgba(255,100,170,0.9)}
+.btn.special{box-shadow:0 8px 30px rgba(255,120,200,0.14);transform:translateY(0)}
+
+/* hint text */
+.hint{text-align:center;margin-top:12px;color:rgba(43,27,43,0.6)}
+
+/* ================================= */
+/* LUXURY CARD & TEXT STYLING COMMON */
+/* ================================= */
+.lux-card{
+  max-width:960px;margin:36px auto;padding:28px;border-radius:20px;background:var(--white-trans);
+  border:2px solid var(--card-border);box-shadow:0 8px 40px rgba(180,140,180,0.08);backdrop-filter: blur(8px);
+}
+
+/* Titles */
+.section-title{font-size:1.8rem;margin-bottom:18px;text-align:center;color:var(--accent2)}
+
+/* message box */
+.message-box p{margin:12px 0;font-size:1.05rem;line-height:1.7;color:var(--text-dark);}
+
+/* reasons */
+.reasons-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.reason-box{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));padding:16px;border-radius:12px;border:1px solid rgba(255,140,255,0.15)}
+
+/* timeline/memories */
+.timeline{display:flex;flex-direction:column;gap:14px}
+.time-item{background:rgba(255,255,255,0.04);padding:14px;border-radius:12px}
+
+/* openwhen items */
+.open-list{display:grid;gap:12px}
+
+/* surprise */
+.tap-box{text-align:center;padding:28px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));cursor:pointer}
+.tap-box .tap-text{font-size:1.15rem;color:var(--text-dark)}
+
+/* hidden message */
+.hidden-message{opacity:0;transition:all .9s ease;margin-top:18px;padding:18px;border-radius:14px;background:linear-gradient(90deg, rgba(255,220,255,0.06), rgba(255,240,255,0.02));border:1px solid rgba(255,120,200,0.14)}
+
+/* signature */
+.signature-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
+.signature-container{text-align:center}
+.signature-title{font-size:2rem;color:#b90062;margin-bottom:12px}
+.signature-text{color:#4b2f3f;line-height:1.7;padding:8px 0}
+.signature-ending{font-weight:700;color:#b90062;margin-top:10px}
+
+/* nav row */
+.nav-row{display:flex;gap:10px;justify-content:center;margin-top:18px}
+
+/* loader */
+#loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ffd6ff,#ffe6ff);z-index:9999}
+.loader-text{font-size:1.4rem;color:#6b2160;font-weight:700}
+.loader-icons{margin-top:8px;font-size:1.6rem}
+
+/* sparkles overlay */
+.sparkles{position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:6px 6px;opacity:0.12;z-index:1}
+
+/* floating decor (animated via JS) */
+#floating-decor{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:2}
+
+/* fade in helpers */
+.fade-in{animation:fadeIn .9s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* fade-line for stagger */
+.fade-line{opacity:0;animation:fadeLine .9s ease forwards}
+.fade-line:nth-child(1){animation-delay:.18s}
+.fade-line:nth-child(2){animation-delay:.36s}
+.fade-line:nth-child(3){animation-delay:.54s}
+.fade-line:nth-child(4){animation-delay:.72s}
+.fade-line:nth-child(5){animation-delay:.9s}
+@keyframes fadeLine{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* confetti (small emoji pieces) */
+.confetti{position:fixed;top:-10vh;font-size:1.2rem;pointer-events:none;animation:confettiFall linear forwards}
+@keyframes confettiFall{to{transform:translateY(120vh) rotate(360deg);opacity:0}}
+
+/* responsive */
+@media (max-width:700px){
+  .main-title{font-size:1.8rem}
+  .lux-card{padding:18px}
+  .btn{padding:10px 14px}
+}

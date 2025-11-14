@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Birthday Surprise 🎀✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-fade">
+
+  <div id="loader"><div class="loader-content"><p class="loader-text">Loading your surprise 🎀✨</p><div class="loader-icons">✨ ✨ ✨</div></div></div>
+
+  <div id="floating-decor" aria-hidden="true"></div>
+  <div class="sparkles" aria-hidden="true"></div>
+  <audio id="bg-music" preload="auto" loop><source src="music.mp3" type="audio/mpeg"></audio>
+
+  <main class="lux-card fade-in">
+    <h2 class="section-title">🎀 A Little Surprise For You 🎀</h2>
+
+    <div class="surprise-container">
+      <div id="reveal-btn" class="tap-box">
+        <p class="tap-text">💞 Tap For Your Surprise 💫</p>
+      </div>
+
+      <div id="surprise-msg" class="hidden-message">
+        ✨ <strong>Happy Birthday, Khyati Didi</strong> ✨<br><br>
+        You are one of the sweetest, strongest, and most beautiful souls I know.
+        I pray this year gifts you luxury, peace, laughter, and everything you dream of.
+        Thank you for being you. I love you endlessly. 💋💞
+      </div>
+
+      <div class="nav-row">
+        <a class="btn" href="reasons.html">⬅ Back</a>
+        <a class="btn primary" href="signature.html">Final Message 💌</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    // Surprise reveal handling
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('reveal-btn');
+      const msg = document.getElementById('surprise-msg');
+      btn.addEventListener('click', () => {
+        msg.style.opacity = '1';
+        window.createConfettiBurst && window.createConfettiBurst();
+      });
+    });
+  </script>
+</body>
+</html>
